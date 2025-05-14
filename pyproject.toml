@@ -1,0 +1,9 @@
+[project]
+name = "Django-Blog-API"
+version = "0.1.0"
+description = "A Blog API using Django REST Framework"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "djangorestframework>=3.16.0",
+]
