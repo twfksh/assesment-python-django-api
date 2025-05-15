@@ -45,21 +45,21 @@ A RESTful Blog API built with Django and Django REST Framework, supporting user 
 1. **Clone the repository**
 
    ```sh
-   git clone <your-repo-url>
-   cd Django-Blog-API
+   git clone https://github.com/twfksh/assesment-python-django-api.git
+   cd assesment-python-django-api
    ```
 
 2. **Create and activate a virtual environment**
 
    ```sh
-   python3 -m venv .venv
+   uv venv
    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    ```
 
 3. **Install dependencies**
 
    ```sh
-   pip install -r requirements.txt
+   uv pip install -r requirements.txt
    ```
 
 4. **Configure environment variables**
