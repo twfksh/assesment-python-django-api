@@ -44,6 +44,7 @@ INSTALLED_APPS += [
 # Custom apps
 INSTALLED_APPS += [
     "apps.users",
+    "apps.posts",
 ]
 
 MIDDLEWARE = [
