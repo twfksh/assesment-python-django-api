@@ -106,6 +106,16 @@ class UserLogoutAPIView(GenericAPIView):
 
 class TokenRefreshAPIView(TokenRefreshView):
     def post(self, request, *args, **kwargs):
+        refresh_token = request.data.get("refresh") or request.COOKIES.get("refresh_token")
+        if not refresh_token:
+            return Response({"refresh": ["This field is required."]}, status=400)
+        # Set the refresh token in request.data for the parent class
+        if hasattr(request.data, "mutable") and not request.data.mutable:
+            request.data.mutable = True
+            request.data["refresh"] = refresh_token
+            request.data.mutable = False
+        else:
+            request.data["refresh"] = refresh_token
         response = super().post(request, *args, **kwargs)
         if response.status_code == 200:
             access_token = response.data["access"]
